@@ -1,5 +1,20 @@
+# Maven
 target/
+
+# IntelliJ IDEA
 .idea/
 *.iml
+
+# VS Code
+.vscode/
+
+# Compiled files
 *.class
+
+# OS files
 .DS_Store
+
+# Helper scripts (not part of TP)
+HOW-TO-RUN.md
+run-exercice.bat
+run-exercice.ps1
