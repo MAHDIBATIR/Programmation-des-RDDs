@@ -17,6 +17,8 @@ public class App2 {
         JavaRDD<String> rddWords= rddLines.flatMap(line -> Arrays.asList(line.split(" ")).iterator());
         JavaPairRDD<String,Integer> rddPaidWord= rddWords.mapToPair(word -> new Tuple2<>(word,1));
         JavaPairRDD<String,Integer> rddwordCount=rddPaidWord.reduceByKey((a, b) -> a+b);
-        rddwordCount.foreach(tuble -> System.out.println(tuble._1()+" "+tuble._2()));
+        rddwordCount.foreach(tuple -> System.out.println(tuple._1()+" "+tuple._2()));
+
+        sparkContext.close();
     }
 }
